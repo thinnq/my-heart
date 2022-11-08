@@ -6,6 +6,9 @@
   <META NAME="Author" CONTENT="">
   <META NAME="Keywords" CONTENT="">
   <META NAME="Description" CONTENT="">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
   html, body {
   height: 100%;
@@ -18,15 +21,34 @@ canvas {
   width: 100%;
   height: 100%;
 }
+
+.show {
+  transform: scale(1) !important;
+}
+
+.hide {
+  transform: scale(0);
+  transition: all 1s;
+}
+
   </style>
  </HEAD>
 
  <BODY>
+  <div style="display: flex; width: 100%; height: 100%; justify-content: center; align-items: center; position: absolute;">
+    <h1 id="my-name" class="hide" style="color: pink; font-family: 'Dancing Script', cursive;">Yêu em</h1>
+  </div>
   <canvas id="pinkboard"></canvas>
   <script>
   /*
  * Settings
  */
+
+const myName = document.getElementById('my-name')
+setTimeout(() => {
+  myName.classList.add('show')
+}, 0)
+
 var settings = {
   particles: {
     length:   500, // maximum amount of particles
